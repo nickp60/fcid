@@ -71,10 +71,6 @@ def main(query, by_machine=False):
         res = get_tech_type(query, FCIDs)
     sys.stdout.write(",".join(res[0]) + "\n")
 
-if False: # some tests
-    main(query="CABBCANXX")
-    main(query="KSQURL", by_machine=True)
-    get_flowcell_type("22C37GLT3", FCIDs)
 
 def cli():
     args = sys.argv[1:]

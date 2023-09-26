@@ -19,4 +19,4 @@ classifiers = [
 
 
 [project.scripts]
-fcid = "fcid.main:cli"
+fcid = "fcid.run:cli"
