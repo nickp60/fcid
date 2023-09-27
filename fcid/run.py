@@ -59,6 +59,7 @@ FCIDs = [
 
 
 def get_tech_type(flowcell, d):
+    flowcell = flowcell.replace("000000000-", "")
     for pattern, value in d:
         if re.search(pattern, flowcell):
             return value

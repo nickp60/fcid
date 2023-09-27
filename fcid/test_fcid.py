@@ -7,3 +7,6 @@ def test_by_machine(capsys):
 
 def test_by_flowcell():
     assert get_tech_type("22C37GLT3", FCIDs)[0] == ["NovaSeq X"]
+
+def test_by_flowcell_weird_zeros():
+    assert get_tech_type("000000000-BLW8J", FCIDs)[0] == ["MiSeq"]
