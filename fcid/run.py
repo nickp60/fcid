@@ -63,14 +63,14 @@ InstrumentIDs = [
 
 # Three emails: 12/7/2022, 9/19/2023, and 2/29/2024
 FCIDs = [
-    ["[BNT][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BRB][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BPC][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BPG][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BPA][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BPL][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BNT][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
-    ["[BTR][A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BNT[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BRB[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BPC[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BPG[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BPA[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BPL[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BNT[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
+    ["BTR[A-Z,0-9]{5}-[A-Z,0-9]{4}", [["iSeq 100"], "Standard Output flow cell"]],
     ["000H[A-Z,0-9]{5}", [["MiniSeq"], "Mid or High Output flow cell"]],
     ["D[A-Z,0-9]{4}",   [["MiSeq"], "MiSeq Nano flow cell"]],
     ["G[A-Z,0-9]{4}",   [["MiSeq"], "MiSeq Micro flow cell"]],
