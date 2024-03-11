@@ -1,5 +1,5 @@
 # fcid
-
+*f*low *c*ell *ID*: parse illumina fastq headers to determine machine and flowcell type
 Thanks to:
 
 - https://www.biostars.org/p/198143/
