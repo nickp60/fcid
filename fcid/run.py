@@ -98,8 +98,9 @@ FCIDs = [
     ["[A-Z,0-9]{5}DR[A-Z,0-9]{2}",   [["NovaSeq 6000"], "SP or S1 flow cell"]],
     ["[A-Z,0-9]{5}DM[A-Z,0-9]{2}",   [["NovaSeq 6000"], "S2 flow cell"]],
     ["[A-Z,0-9]{5}DS[A-Z,0-9]{2}",   [["NovaSeq 6000"], "S4 flow cell"]],
-    ["[A-Z0-9]{6}LT[A-Z,0-9]",   [["NovaSeq X", "NovaSeq X Plus"], "10B flow cell"]],
-
+    ["[A-Z0-9]{6}LT3",   [["NovaSeq X", "NovaSeq X Plus"], "10B flow cell"]],
+    ["[A-Z0-9]{6}LT4",   [["NovaSeq X", "NovaSeq X Plus"], "25B flow cell"]],
+    ["[A-Z0-9]{6}LT[A-Z,0-9]",   [["NovaSeq X", "NovaSeq X Plus"], "Unknown flow cell"]],
 #    ["[A-Z,0-9]{5}ACXX",   [["HiSeq 1000", "HiSeq 1500", "HiSeq 2000", "HiSeq 2500"], "High Output (8-lane) v3 flow cell"]],
 #    ["H[A-Z,0-9]{4}BCXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
 #    ["C[A-Z,0-9]{4}ANXX",   [["HiSeq 1500", "HiSeq 2000", "HiSeq 2500"], "High Output (8-lane) v4 flow cell"]],
@@ -108,7 +109,7 @@ FCIDs = [
 #    ["H[A-Z,0-9]{4}ADXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
 #    ["H[A-Z,0-9]{4}BC[A-Z,0-9]{2}",   [["HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
 #    ["H[A-Z,0-9]{4}BBXY[A-Z,0-9]{2}",   [["HiSeq 4000"], "(8-lane) v1 flow cell"]],
-    [".*",  [["Unknown Machine"], "Unknown flowcell"]
+    [".*",  [["Unknown Machine"], "Unknown flow cell"]
      ]
 ]
 
@@ -120,20 +121,30 @@ def get_tech_type(flowcell, d):
             return value
     return None
 
-def main(query, by_machine=False):
+
+def main(query, by_machine=False, detailed=False):
     if by_machine:
         res = get_tech_type(query, InstrumentIDs)
     else:
         res = get_tech_type(query, FCIDs)
-    sys.stdout.write(",".join(res[0]) + "\n")
+    if detailed:
+        sys.stdout.write(query + "\t" + ",".join(res[0]) + "\t" + res[1] +  "\n")
+    else:
+        sys.stdout.write(",".join(res[0]) + "\n")
 
 
 def cli():
     args = sys.argv[1:]
-    by_machine = False
+    by_machine, detailed = False, False
     if "--by-machine" in args:
-        by_machine=True
+        by_machine = True
         args.remove("--by-machine")
+    if "--detailed" in args:
+        detailed = True
+        args.remove("--detailed")
+    if detailed and by_machine:
+        sys.stderr("No detailed output available for machine name")
+        detailed = False
     if len(args) != 1:
-        raise ValueError ("USAGE: fcid <flowcell|machine> [--by-machine]")
-    main(query=args[0], by_machine=by_machine)
+        raise ValueError ("USAGE: fcid <flowcell|machine> [--by-machine] [--detailed]")
+    main(query=args[0], by_machine=by_machine, detailed=detailed)

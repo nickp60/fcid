@@ -1,3 +1,5 @@
+import subprocess
+
 from run import main, get_tech_type, FCIDs
 
 def test_by_machine(capsys):
@@ -58,3 +60,25 @@ def test_given_patterns():
         assert res[0][0] == v[0]
         # check chemistry
         # TODO
+
+def test_by_novaseqx():
+    assert get_tech_type("ABCDEFLT2", FCIDs)[0][0] == "NovaSeq X"
+    assert get_tech_type("ABCDEFLT2", FCIDs)[1] == "Unknown flow cell"
+    assert get_tech_type("ABCDEFLT5", FCIDs)[1] == "Unknown flow cell"
+    assert get_tech_type("ABCDEFLT3", FCIDs)[1] == "10B flow cell"
+    assert get_tech_type("ABCDEFLT4", FCIDs)[1] == "25B flow cell"
+
+def test_integration():
+    res = subprocess.check_output(["fcid ABCDEFLT3"], shell=True, )
+    print(res.decode())
+    assert res.decode()  == "NovaSeq X,NovaSeq X Plus\n"
+
+def test_integration_detailed():
+    res = subprocess.check_output(["fcid ABCDEFLT3 --detailed"], shell=True, )
+    print(res.decode())
+    assert res.decode()  == "ABCDEFLT3\tNovaSeq X,NovaSeq X Plus\t10B flow cell\n"
+
+def test_integration_bymachine():
+    res = subprocess.check_output(["fcid A12345 --by-machine"], shell=True, )
+    print(res.decode())
+    assert res.decode()  == "NovaSeq\n"
