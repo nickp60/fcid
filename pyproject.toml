@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fcid"
-version = "0.0.6"
+version = "0.0.10"
 authors = [
     {name = "Nick Waters", email = "nickp60@gmail.com"},
 ]
-description = "Get Illumina Machine info from flowcell"
+description = "Get Illumina sequencer metadata from flowcell/machine identifier"
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "MIT"}

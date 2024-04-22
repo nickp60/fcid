@@ -32,9 +32,20 @@ pip install --editable .
 
 
 ## Usage (package)
-
+```python
+>>> from fcid import run
+>>> run.get_tech_type("CABBCANXX", run.FCIDs)
+[['HiSeq 2500'], 'High Output v3 flow cell']
+```
 
 ## Test
 ```
 pytest
 ```
+
+## Deployment
+
+1. Update version pyproject.toml
+2. commit and tag
+3. push to github and make a release
+4. check the package deployment action
