@@ -32,3 +32,9 @@ pip install --editable .
 
 
 ## Usage (package)
+
+
+## Test
+```
+pytest
+```
