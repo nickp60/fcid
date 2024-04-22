@@ -1,10 +1,15 @@
 import subprocess
+import sys
+
+from unittest.mock import patch
 
 from run import main, get_tech_type, FCIDs
 
 
 def test_by_machine(capsys):
-    main(query="K12345", by_machine=True)
+    testargs = ["fcid", "K12345", "--by-machine"]
+    with patch.object(sys, "argv", testargs):
+        main()
     outerr = capsys.readouterr()
     assert outerr.out == "HiSeq 3000,HiSeq 4000\n"
 
@@ -76,7 +81,7 @@ def test_by_novaseqx():
 
 def test_integration():
     res = subprocess.check_output(
-        ["fcid ABCDEFLT3"],
+        ["python fcid/run.py ABCDEFLT3"],
         shell=True,
     )
     print(res.decode())
@@ -85,7 +90,7 @@ def test_integration():
 
 def test_integration_detailed():
     res = subprocess.check_output(
-        ["fcid ABCDEFLT3 --detailed"],
+        ["python fcid/run.py ABCDEFLT3 --detailed"],
         shell=True,
     )
     print(res.decode())
@@ -94,7 +99,7 @@ def test_integration_detailed():
 
 def test_integration_bymachine():
     res = subprocess.check_output(
-        ["fcid A12345 --by-machine"],
+        ["python fcid/run.py A12345 --by-machine"],
         shell=True,
     )
     print(res.decode())

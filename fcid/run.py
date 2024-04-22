@@ -131,18 +131,7 @@ def get_tech_type(flowcell, d):
     return None
 
 
-def main(query, by_machine=False, detailed=False):
-    if by_machine:
-        res = get_tech_type(query, InstrumentIDs)
-    else:
-        res = get_tech_type(query, FCIDs)
-    if detailed:
-        sys.stdout.write(query + "\t" + ",".join(res[0]) + "\t" + res[1] + "\n")
-    else:
-        sys.stdout.write(",".join(res[0]) + "\n")
-
-
-def cli():
+def main():
     args = sys.argv[1:]
     by_machine, detailed = False, False
     if "--by-machine" in args:
@@ -156,4 +145,16 @@ def cli():
         detailed = False
     if len(args) != 1:
         raise ValueError("USAGE: fcid <flowcell|machine> [--by-machine] [--detailed]")
-    main(query=args[0], by_machine=by_machine, detailed=detailed)
+    query = args[0]
+    if by_machine:
+        res = get_tech_type(query, InstrumentIDs)
+    else:
+        res = get_tech_type(query, FCIDs)
+    if detailed:
+        sys.stdout.write(query + "\t" + ",".join(res[0]) + "\t" + res[1] + "\n")
+    else:
+        sys.stdout.write(",".join(res[0]) + "\n")
+
+
+if __name__ == "__main__":
+    main()
