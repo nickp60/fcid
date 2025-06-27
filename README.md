@@ -1,3 +1,5 @@
+![PyPI - Version](https://img.shields.io/pypi/v/fcid)
+
 # fcid
 *f*low *c*ell *ID*: parse illumina fastq headers to determine machine and flowcell type
 Thanks to:
