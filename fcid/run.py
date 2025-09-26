@@ -15,6 +15,7 @@ InstrumentIDs = [
     ["E[0-9]{5}", [["HiSeq X"]]],
     ["NB[0-9]{6}", [["NextSeq"]]],
     ["NS[0-9]{6}", [["NextSeq"]]],
+    ["VH[0-9]{5}", [["NextSeq 2000"]]],
     ["MN[0-9]{5}", [["MiniSeq"]]],
     ["A[0-9]{5}", [["NovaSeq"]]],
     ["NA[0-9]{5}", [["NovaSeq"]]],

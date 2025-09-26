@@ -13,6 +13,13 @@ def test_by_machine(capsys):
     outerr = capsys.readouterr()
     assert outerr.out == "HiSeq 3000,HiSeq 4000\n"
 
+def test_by_machine_nextseq(capsys):
+    testargs = ["fcid", "VH12345", "--by-machine"]
+    with patch.object(sys, "argv", testargs):
+        main()
+    outerr = capsys.readouterr()
+    assert outerr.out == "NextSeq 2000\n"
+
 
 def test_by_flowcell():
     print(get_tech_type("22C37GLT3", FCIDs))
