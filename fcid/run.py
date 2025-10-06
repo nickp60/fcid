@@ -142,7 +142,7 @@ def main():
         detailed = True
         args.remove("--detailed")
     if detailed and by_machine:
-        sys.stderr("No detailed output available for machine name")
+        sys.stderr.write("No detailed output available for machine name")
         detailed = False
     if len(args) != 1:
         raise ValueError("USAGE: fcid <flowcell|machine> [--by-machine] [--detailed]")

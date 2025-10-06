@@ -111,3 +111,11 @@ def test_integration_bymachine():
     )
     print(res.decode())
     assert res.decode() == "NovaSeq\n"
+
+def test_integration_bymachine_detailed():
+    res = subprocess.check_output(
+        ["python fcid/run.py A12345 --by-machine --detailed"],
+        shell=True,
+    )
+    print(res.decode())
+    assert res.decode() == "NovaSeq\n"
