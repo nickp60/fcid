@@ -11,6 +11,8 @@ Thanks to:
 > Disclaimer: this is not a replacement for proper sequencing run tracking.
 > Disclaimer: PRs welcome to fill gaps!  Instrument IDs are less reliable as those are often changed by the sequencing center.
 
+> Got ONT data? Their flowcells do not follow a naming convention, but they can look up flowcells internally; contact them via the support page on their website.
+
 
 ## Installation
 
