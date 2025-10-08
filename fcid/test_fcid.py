@@ -119,3 +119,12 @@ def test_integration_bymachine_detailed():
     )
     print(res.decode())
     assert res.decode() == "NovaSeq\n"
+
+
+def test_dubious_patterns():
+    res = subprocess.check_output(
+        ["python fcid/run.py H7AP8ADXX"],
+        shell=True,
+    )
+    print(res.decode())
+    assert res.decode().startswith("HiSeq")

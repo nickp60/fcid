@@ -21,9 +21,9 @@ InstrumentIDs = [
     ["NA[0-9]{5}", [["NovaSeq"]]],
     ["SN[0-9]{3}", [["HiSeq2000", "HiSeq2500"]]],
     ["SN[0-9]{3}", [["HiSeq2000", "HiSeq2500"]]],
-    [".*", [["Unknown"]]],
+    [".*", [["Unknown Machine"]]],
 ]
-# Below ar ethe relevant texts from the 3 emails with tech support
+# Below are the relevant texts from the 3 emails with tech support
 # ------------------------------------
 # xxxxxBCxx: HiSeq 2500 rapid v2
 # xxxxxACxx: HiSeq 2500 TruSeq v3
@@ -116,8 +116,8 @@ FCIDs = [
     #    ["H[A-Z,0-9]{4}BCXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
     #    ["C[A-Z,0-9]{4}ANXX",   [["HiSeq 1500", "HiSeq 2000", "HiSeq 2500"], "High Output (8-lane) v4 flow cell"]],
     #    ["C[A-Z,0-9]{4}AC[A-Z,0-9]{2}",   [["HiSeq 2500"], "High Output (8-lane) v4 flow cell"]],
-    #    ["H[A-Z,0-9]{4}ADXX",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
-    #    ["H[A-Z,0-9]{4}ADXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
+    ["H[A-Z,0-9]{4}ADXX",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
+    ["H[A-Z,0-9]{4}ADXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
     #    ["H[A-Z,0-9]{4}BC[A-Z,0-9]{2}",   [["HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
     #    ["H[A-Z,0-9]{4}BBXY[A-Z,0-9]{2}",   [["HiSeq 4000"], "(8-lane) v1 flow cell"]],
     [".*", [["Unknown Machine"], "Unknown flow cell"]],
