@@ -110,7 +110,7 @@ def test_integration_bymachine():
         shell=True,
     )
     print(res.decode())
-    assert res.decode() == "NovaSeq\n"
+    assert res.decode() == "NovaSeq 6000\n"
 
 def test_integration_bymachine_detailed():
     res = subprocess.check_output(
@@ -118,7 +118,7 @@ def test_integration_bymachine_detailed():
         shell=True,
     )
     print(res.decode())
-    assert res.decode() == "NovaSeq\n"
+    assert res.decode() == "NovaSeq 6000\n"
 
 
 def test_dubious_patterns():

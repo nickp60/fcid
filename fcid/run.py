@@ -66,7 +66,7 @@ FCIDs = [
     ["A[A-Z0-9]{4}", [["MiSeq"], "MiSeq Standard v2 flow cell"]],
     ["[BCJKL][A-Z0-9]{4}", [["MiSeq"], "MiSeq Standard flow cell"]],
     ["[A-Z0-9]{5}AF[A-Z0-9]{2}", [["NextSeq 500", "NextSeq 550"], "Mid Output flow cell"]],
-    ["[A-Z0-9]{5}(AB)G[A-Z0-9]{2}", [["NextSeq 500", "NextSeq 550"], "High Output flow cell"]],
+    ["[A-Z0-9]{5}[AB]G[A-Z0-9]{2}", [["NextSeq 500", "NextSeq 550"], "High Output flow cell"]],
     ["[A-Z0-9]{7}M5", [["NextSeq 1000", "NextSeq 2000"], "P1 or P2 flow cell"]],
     ["[A-Z0-9]{7}HV", [["NextSeq 1000", "NextSeq 2000"], "P3 flow cell"]],
     ["[A-Z0-9]{5}BC[A-Z0-9]{2}", [["HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
