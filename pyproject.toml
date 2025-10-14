@@ -10,7 +10,7 @@ authors = [
 ]
 maintainers = [
   {name = "Nick Waters", email = "nickp60@gmail.com"},
-  {name = "Grammatikati Konstantin", email=""}
+  {name = "Grammatikati Konstantin", email="stikus@mail.ru"}
 ]
 description = "Get Illumina sequencer metadata from flowcell/machine identifier"
 readme = "README.md"
