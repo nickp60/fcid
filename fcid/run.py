@@ -16,6 +16,8 @@ InstrumentIDs = [
     ["MN[0-9]{5}", [["MiniSeq"]]],
     ["N?A[0-9]{5}", [["NovaSeq 6000"]]],
     ["SN[0-9]{3}", [["HiSeq 2000", "HiSeq 2500"]]],
+    ["LH[0-9]{5}",["NovaSeq X Plus"]],
+    ["LL[0-9]{5}",["NovaSeq X"]],
     [".*", [["Unknown Machine"]]],
 ]
 # Below are the relevant texts from the 3 emails with tech support
