@@ -15,7 +15,7 @@ maintainers = [
 description = "Get Illumina sequencer metadata from flowcell/machine identifier"
 readme = "README.md"
 requires-python = ">=3.7"
-license = "MIT
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
