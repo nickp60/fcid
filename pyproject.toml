@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fcid"
-version = "0.1.3"
+version = "0.1.4"
 authors = [
     {name = "Nick Waters", email = "nickp60@gmail.com"},
 ]
@@ -15,7 +15,7 @@ maintainers = [
 description = "Get Illumina sequencer metadata from flowcell/machine identifier"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {text = "MIT"}
+license = "MIT
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
