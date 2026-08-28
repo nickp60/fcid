@@ -83,13 +83,8 @@ FCIDs = [
     ["[A-Z0-9]{6}LT3", [["NovaSeq X", "NovaSeq X Plus"], "10B flow cell"]],
     ["[A-Z0-9]{6}LT4", [["NovaSeq X", "NovaSeq X Plus"], "25B flow cell"]],
     ["[A-Z0-9]{6}LT[A-Z0-9]", [["NovaSeq X", "NovaSeq X Plus"], "Unknown flow cell"]],
-    #    ["[A-Z0-9]{5}ACXX",   [["HiSeq 1000", "HiSeq 1500", "HiSeq 2000", "HiSeq 2500"], "High Output (8-lane) v3 flow cell"]],
-    #    ["H[A-Z0-9]{4}BCXY",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
-    #    ["C[A-Z0-9]{4}ANXX",   [["HiSeq 1500", "HiSeq 2000", "HiSeq 2500"], "High Output (8-lane) v4 flow cell"]],
-    #    ["C[A-Z0-9]{4}AC[A-Z0-9]{2}",   [["HiSeq 2500"], "High Output (8-lane) v4 flow cell"]],
     ["H[A-Z0-9]{4}ADX[XY]",   [["HiSeq 1500", "HiSeq 2500"], "Rapid Run (2-lane) v1 flow cell"]],
-    #    ["H[A-Z0-9]{4}BC[A-Z0-9]{2}",   [["HiSeq 2500"], "Rapid Run (2-lane) v2 flow cell"]],
-    #    ["H[A-Z0-9]{4}BBXY[A-Z0-9]{2}",   [["HiSeq 4000"], "(8-lane) v1 flow cell"]],
+    ["B[A-Z]{2}[0-9]{5}-[0-9]{4}",   [["MiSeq i100"], "Unknown flow cell"]],
     [".*", [["Unknown Machine"], "Unknown flow cell"]],
 ]
 

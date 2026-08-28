@@ -3,7 +3,7 @@ import sys
 
 from unittest.mock import patch
 
-from run import main, get_tech_type, FCIDs
+from run import main, get_tech_type, FCIDs, InstrumentIDs
 
 
 def test_by_machine(capsys):
@@ -85,6 +85,9 @@ def test_by_novaseqx():
     assert get_tech_type("ABCDEFLT3", FCIDs)[1] == "10B flow cell"
     assert get_tech_type("ABCDEFLT4", FCIDs)[1] == "25B flow cell"
 
+def test_by_miseq_i100():
+    assert get_tech_type("BXC07821-1432", FCIDs)[0][0] == "MiSeq i100"
+
 
 def test_integration():
     res = subprocess.check_output(
@@ -128,3 +131,27 @@ def test_dubious_patterns():
     )
     print(res.decode())
     assert res.decode().startswith("HiSeq")
+
+
+def test_GAII_patterns():
+    queries = {
+        'SRR031716':"HWI-EAS299:4:30M2BAAXX",
+        'SRR39711562':"VH00293:43:AAFNVCJM5",
+        'DRR541552':"HWI-EAS443:34:64V25",
+        'ERR17328671':"NS500502:0043:FC:H5KGFBGX5",
+        'SRR38846040':"HWUSI-EAS1720_0009",
+        'SRR38840728':"HWI-B5-690_0089_FC",
+        'SRR37964768':"FCD0KPPACXX",
+        'SRR37580476':"LH00128:47:222KJJLT4",
+        'SRR37145469':"HWUSI-EAS109E:43:63bm6aaxx",
+        'SRR37114001':"A00808:1053:HJFLFDSX3",
+        'SRR36379819':"LH00190:730:22NMG3LT4",
+        'SRR36555276':"A01757:282:HVHY3DRX5",
+        'DRR815238': "A00881:803:HKFHHDSX2"
+    }
+    results = {}
+    sys.stderr.write(f"| SRA | header | fcid by machine | fcid by flowcell |\n")
+    for k, v in queries.items():
+        fc = get_tech_type(v.split(":")[-1], FCIDs)
+        machine = get_tech_type(v.split(":")[0], InstrumentIDs)
+        sys.stdout.write(f"| {k} | {v} | {machine} | {fc} |\n")

@@ -44,7 +44,7 @@ pip install --editable .
 
 ## Test
 ```
-pytest
+pytest -s # see detailed logs by
 ```
 
 ## Deployment
